@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Music Web</title>
+
+    <meta name="theme-color" content="#121212">
+    <meta name="description" content="Modern music streaming website">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/player.css">
+</head>
+
+<body>
+
+    <!-- APP -->
+    <div id="app">
+
+        <!-- HEADER -->
+        <header class="header">
+            <div class="logo">
+                <span>♪</span>
+                <strong>Music</strong>
+            </div>
+
+            <button class="profile-btn">
+                👤
+            </button>
+        </header>
+
+        <!-- MAIN -->
+        <main class="main">
+
+            <section class="welcome">
+                <p>Selamat datang 👋</p>
+                <h1>Dengarkan musik favoritmu</h1>
+            </section>
+
+            <!-- SEARCH -->
+            <div class="search-box">
+                <span>🔎</span>
+                <input
+                    type="search"
+                    placeholder="Cari lagu, artis, atau album..."
+                >
+            </div>
+
+            <!-- QUICK ACCESS -->
+            <section class="section">
+                <div class="section-title">
+                    <h2>Quick Access</h2>
+                </div>
+
+                <div class="quick-grid">
+
+                    <div class="quick-card">
+                        <div class="quick-icon">❤️</div>
+                        <span>Liked Songs</span>
+                    </div>
+
+                    <div class="quick-card">
+                        <div class="quick-icon">🕘</div>
+                        <span>Recently Played</span>
+                    </div>
+
+                    <div class="quick-card">
+                        <div class="quick-icon">🎵</div>
+                        <span>Your Playlist</span>
+                    </div>
+
+                    <div class="quick-card">
+                        <div class="quick-icon">⬇️</div>
+                        <span>Downloads</span>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- ALBUM -->
+            <section class="section">
+
+                <div class="section-title">
+                    <h2>Made For You</h2>
+                    <button>See all</button>
+                </div>
+
+                <div class="album-list">
+
+                    <article class="album-card">
+                        <div class="album-cover">
+                            🎵
+                        </div>
+
+                        <h3>Daily Mix</h3>
+                        <p>Music for your day</p>
+                    </article>
+
+                    <article class="album-card">
+                        <div class="album-cover">
+                            🌙
+                        </div>
+
+                        <h3>Night Vibes</h3>
+                        <p>Relaxing music</p>
+                    </article>
+
+                    <article class="album-card">
+                        <div class="album-cover">
+                            🔥
+                        </div>
+
+                        <h3>Energy Mix</h3>
+                        <p>Boost your energy</p>
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- SONGS -->
+            <section class="section">
+
+                <div class="section-title">
+                    <h2>Recently Played</h2>
+                    <button>See all</button>
+                </div>
+
+                <div class="song-list">
+
+                    <div class="song">
+                        <div class="song-cover">🎵</div>
+
+                        <div class="song-info">
+                            <strong>My First Song</strong>
+                            <span>Unknown Artist</span>
+                        </div>
+
+                        <button class="play-btn">▶</button>
+                    </div>
+
+                    <div class="song">
+                        <div class="song-cover">🎧</div>
+
+                        <div class="song-info">
+                            <strong>Dream</strong>
+                            <span>Unknown Artist</span>
+                        </div>
+
+                        <button class="play-btn">▶</button>
+                    </div>
+
+                    <div class="song">
+                        <div class="song-cover">🌌</div>
+
+                        <div class="song-info">
+                            <strong>Galaxy</strong>
+                            <span>Unknown Artist</span>
+                        </div>
+
+                        <button class="play-btn">▶</button>
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+        <!-- MINI PLAYER -->
+        <div class="mini-player">
+
+            <div class="mini-cover">
+                🎵
+            </div>
+
+            <div class="mini-info">
+                <strong>Nothing Playing</strong>
+                <span>Select a song</span>
+            </div>
+
+            <button id="miniPlay">▶</button>
+
+        </div>
+
+        <!-- BOTTOM NAVIGATION -->
+        <nav class="bottom-nav">
+
+            <a class="nav-item active">
+                <span>⌂</span>
+                <small>Home</small>
+            </a>
+
+            <a class="nav-item">
+                <span>⌕</span>
+                <small>Search</small>
+            </a>
+
+            <a class="nav-item">
+                <span>▣</span>
+                <small>Library</small>
+            </a>
+
+        </nav>
+
+    </div>
+
+    <script src="js/app.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/search.js"></script>
+
+</body>
+</html>
