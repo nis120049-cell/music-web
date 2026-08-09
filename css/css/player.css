@@ -1,0 +1,485 @@
+/* ========================================
+   MUSIC WEB - PROFESSIONAL PLAYER
+======================================== */
+
+/* MINI PLAYER */
+
+.mini-player {
+    overflow: hidden;
+}
+
+.mini-player::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 0%;
+    height: 2px;
+
+    background: var(--accent);
+
+    transition: width 0.15s linear;
+}
+
+/* MINI PLAYER COVER */
+
+.mini-cover {
+    position: relative;
+
+    overflow: hidden;
+
+    flex-shrink: 0;
+}
+
+.mini-cover img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+/* MINI INFO */
+
+.mini-info {
+    overflow: hidden;
+}
+
+.mini-info strong,
+.mini-info span {
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+/* MINI PLAY BUTTON */
+
+#miniPlay {
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 14px;
+
+    transition:
+        transform 0.15s,
+        background 0.15s;
+}
+
+#miniPlay:active {
+    transform: scale(0.9);
+}
+
+/* ========================================
+   FULL PLAYER
+======================================== */
+
+.full-player {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1000;
+
+    background:
+        linear-gradient(
+            180deg,
+            #202020 0%,
+            #090909 100%
+        );
+
+    display: none;
+
+    flex-direction: column;
+
+    padding:
+        20px
+        20px
+        calc(30px + env(safe-area-inset-bottom));
+
+    overflow-y: auto;
+}
+
+.full-player.active {
+    display: flex;
+}
+
+/* PLAYER HEADER */
+
+.player-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 30px;
+}
+
+.player-header button {
+    width: 42px;
+    height: 42px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.08);
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 18px;
+}
+
+/* PLAYER COVER */
+
+.player-cover {
+    width: min(
+        85vw,
+        380px
+    );
+
+    aspect-ratio: 1 / 1;
+
+    margin:
+        10px
+        auto
+        35px;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    background: var(--surface-3);
+
+    box-shadow:
+        0 25px 60px
+        rgba(0,0,0,0.5);
+}
+
+.player-cover img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+/* SONG INFORMATION */
+
+.player-info {
+    width: min(
+        600px,
+        100%
+    );
+
+    margin: auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+}
+
+.player-title {
+    font-size: 22px;
+
+    font-weight: 700;
+}
+
+.player-artist {
+    color: var(--text-muted);
+
+    font-size: 14px;
+}
+
+/* PROGRESS */
+
+.progress-container {
+    width: min(
+        600px,
+        100%
+    );
+
+    margin:
+        30px
+        auto
+        5px;
+}
+
+.progress-bar {
+    position: relative;
+
+    width: 100%;
+
+    height: 5px;
+
+    background: #555;
+
+    border-radius: 20px;
+
+    cursor: pointer;
+}
+
+.progress-fill {
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 0%;
+
+    height: 100%;
+
+    background: white;
+
+    border-radius: inherit;
+}
+
+.progress-thumb {
+    position: absolute;
+
+    top: 50%;
+
+    left: 0%;
+
+    width: 12px;
+    height: 12px;
+
+    transform:
+        translate(
+            -50%,
+            -50%
+        );
+
+    border-radius: 50%;
+
+    background: white;
+
+    opacity: 0;
+
+    transition: opacity 0.15s;
+}
+
+.progress-bar:hover .progress-thumb {
+    opacity: 1;
+}
+
+.time-container {
+    display: flex;
+
+    justify-content: space-between;
+
+    color: var(--text-muted);
+
+    font-size: 11px;
+
+    margin-top: 8px;
+}
+
+/* PLAYER CONTROLS */
+
+.player-controls {
+    width: min(
+        600px,
+        100%
+    );
+
+    margin:
+        20px
+        auto
+        0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 25px;
+}
+
+.player-controls button {
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: transparent;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 18px;
+}
+
+.player-controls button:active {
+    transform: scale(0.9);
+}
+
+/* MAIN PLAY */
+
+.player-controls .main-play {
+    width: 58px;
+    height: 58px;
+
+    background: white;
+
+    color: black;
+
+    font-size: 20px;
+}
+
+/* ACTIVE BUTTON */
+
+.player-controls button.active {
+    color: var(--accent);
+}
+
+/* SECONDARY CONTROLS */
+
+.player-secondary {
+    width: min(
+        600px,
+        100%
+    );
+
+    margin:
+        25px
+        auto
+        0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+.player-secondary button {
+    border: none;
+
+    background: transparent;
+
+    color: var(--text-muted);
+
+    cursor: pointer;
+
+    font-size: 18px;
+}
+
+/* VOLUME */
+
+.volume-container {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+.volume-slider {
+    width: 100px;
+
+    accent-color: var(--accent);
+}
+
+
+/* ========================================
+   MOBILE PLAYER
+======================================== */
+
+@media (max-width: 600px) {
+
+    .full-player {
+        padding:
+            15px
+            16px
+            30px;
+    }
+
+    .player-header {
+        margin-bottom: 20px;
+    }
+
+    .player-cover {
+        width: 82vw;
+
+        margin-bottom: 25px;
+    }
+
+    .player-title {
+        font-size: 20px;
+    }
+
+    .player-controls {
+        gap: 15px;
+    }
+
+    .player-controls button {
+        width: 42px;
+        height: 42px;
+    }
+
+    .player-controls .main-play {
+        width: 58px;
+        height: 58px;
+    }
+
+    .volume-slider {
+        width: 80px;
+    }
+
+}
+
+
+/* ========================================
+   VERY SMALL PHONE
+======================================== */
+
+@media (max-width: 360px) {
+
+    .player-cover {
+        width: 75vw;
+    }
+
+    .player-controls {
+        gap: 8px;
+    }
+
+    .player-controls button {
+        width: 38px;
+        height: 38px;
+
+        font-size: 15px;
+    }
+
+    .player-controls .main-play {
+        width: 52px;
+        height: 52px;
+    }
+
+}
