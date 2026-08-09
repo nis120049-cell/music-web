@@ -1,0 +1,302 @@
+/* ========================================
+   MUSIC WEB - RESPONSIVE DESIGN
+======================================== */
+
+/* ================================
+   SMALL PHONE
+   320px - 374px
+================================ */
+
+@media (max-width: 374px) {
+
+    .header {
+        padding: 0 12px;
+    }
+
+    .main {
+        padding: 20px 12px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .logo span {
+        width: 28px;
+        height: 28px;
+        font-size: 17px;
+    }
+
+    .welcome h1 {
+        font-size: 22px;
+    }
+
+    .search-box {
+        height: 46px;
+    }
+
+    .quick-grid {
+        gap: 7px;
+    }
+
+    .quick-card {
+        min-height: 62px;
+        padding: 7px;
+        gap: 8px;
+    }
+
+    .quick-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 17px;
+    }
+
+    .quick-card span {
+        font-size: 11px;
+    }
+
+    .album-card {
+        min-width: 125px;
+    }
+
+    .album-cover {
+        width: 125px;
+        height: 125px;
+        font-size: 38px;
+    }
+
+    .song-cover {
+        width: 45px;
+        height: 45px;
+    }
+
+    .song-info strong {
+        font-size: 13px;
+    }
+
+    .play-btn {
+        width: 34px;
+        height: 34px;
+    }
+
+    .mini-player {
+        left: 6px;
+        right: 6px;
+        bottom: 64px;
+    }
+
+    .bottom-nav {
+        height: 60px;
+    }
+}
+
+
+/* ================================
+   NORMAL PHONE
+   375px - 599px
+================================ */
+
+@media (min-width: 375px) and (max-width: 599px) {
+
+    .main {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .quick-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+/* ================================
+   LARGE PHONE
+   600px - 767px
+================================ */
+
+@media (min-width: 600px) and (max-width: 767px) {
+
+    .main {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .quick-grid {
+        grid-template-columns:
+            repeat(4, 1fr);
+    }
+
+    .album-card {
+        min-width: 160px;
+    }
+
+    .album-cover {
+        width: 160px;
+        height: 160px;
+    }
+
+}
+
+
+/* ================================
+   TABLET
+   768px+
+================================ */
+
+@media (min-width: 768px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .header {
+        height: 70px;
+    }
+
+    .main {
+        min-height: calc(100vh - 70px);
+    }
+
+}
+
+
+/* ================================
+   DESKTOP
+   1024px+
+================================ */
+
+@media (min-width: 1024px) {
+
+    .main {
+        max-width: 1200px;
+    }
+
+    .welcome {
+        margin-top: 10px;
+    }
+
+    .quick-card {
+        min-height: 80px;
+    }
+
+    .song {
+        padding: 10px;
+    }
+
+}
+
+
+/* ================================
+   LARGE DESKTOP
+   1440px+
+================================ */
+
+@media (min-width: 1440px) {
+
+    .main {
+        max-width: 1300px;
+    }
+
+}
+
+
+/* ================================
+   LANDSCAPE PHONE
+================================ */
+
+@media (max-height: 500px) and (orientation: landscape) {
+
+    .header {
+        height: 55px;
+    }
+
+    .main {
+        padding-top: 15px;
+    }
+
+    .welcome {
+        margin-bottom: 15px;
+    }
+
+    .welcome h1 {
+        font-size: 24px;
+    }
+
+    .bottom-nav {
+        height: 50px;
+    }
+
+    .mini-player {
+        bottom: 54px;
+    }
+
+}
+
+
+/* ================================
+   TOUCH DEVICE
+================================ */
+
+@media (hover: none) {
+
+    .quick-card:hover {
+        transform: none;
+    }
+
+    .album-card:hover .album-cover {
+        transform: none;
+    }
+
+    .song:hover {
+        background: transparent;
+    }
+
+}
+
+
+/* ================================
+   REDUCE ANIMATION
+================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+        animation: none !important;
+    }
+
+}
+
+
+/* ================================
+   SAFE AREA
+   Untuk HP dengan notch
+================================ */
+
+@supports (padding: env(safe-area-inset-bottom)) {
+
+    .bottom-nav {
+        padding-bottom:
+            env(safe-area-inset-bottom);
+
+        height:
+            calc(
+                60px +
+                env(safe-area-inset-bottom)
+            );
+    }
+
+    #app {
+        padding-bottom:
+            calc(
+                150px +
+                env(safe-area-inset-bottom)
+            );
+    }
+
+}
